@@ -1,0 +1,516 @@
+body, body * {
+    vertical-align: baseline;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* =============================== SVG CLASSES =============================== */
+.strokes
+{
+    fill: none;
+    stroke: #fff;
+    stroke-width: 12;
+    stroke-miterlimit: 5;
+}
+
+.image
+{
+    display: block;
+}
+
+
+/* =============================== GLOBAL CSS =============================== */
+
+/* add this to buttons to animate rollovers */
+.divTransition
+{
+    transition:     	0.5s;
+    -webkit-transition: 0.5s;
+}
+
+
+.mainExit
+{
+    position: absolute;
+    cursor: pointer;
+
+    top: 0;
+    left: 0;
+
+    width: 728px;
+    height: 250px;
+}
+
+
+#adContainer
+{
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+
+    width: 728px;
+    height: 90px;
+
+    top: 0;
+    left: 0;
+}
+
+
+#adBorder
+{
+    position: absolute;
+    pointer-events: none;
+
+    width: 728px;
+    height: 90px;
+
+    top: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    border: 1px solid #000000;
+
+    opacity: 0;
+}
+
+
+/* =============================== EXPAND PANEL =============================== */
+#expanded {
+    position: absolute;
+    overflow: hidden;
+
+    width: 728px;
+    height: 250px;
+
+    top: 0;
+    left: 0;
+
+    background-color: #dfdeda;
+    opacity: 0;
+    display: none;
+
+    background-image: url("728x250_Expanded.jpg");
+    background-repeat: no-repeat;
+}
+
+#replayBtnHolder
+{
+    position: absolute;
+    cursor: pointer;
+
+    right: 4px;
+    top: 4px;
+
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+}
+
+#replayBtn
+{
+    cursor: pointer;
+    position: absolute;
+    display: block;
+
+    width: inherit;
+    height: inherit;
+    opacity: 1;
+
+    fill: white;
+    background-color: transparent;
+}
+
+#replayBtn:hover
+{
+    fill: #af1709;
+    -ms-transform: rotate(-360deg); /* IE 9 */
+    -webkit-transform: rotate(-360deg); /* Chrome, Safari, Opera */
+    transform: rotate(-360deg);
+}
+
+
+#amazonLogo
+{
+    position: absolute;
+    width: 135px;
+    height: 50px;
+
+    left: 428px;
+    top: 81px;
+
+    opacity: 0;
+
+    background-image: url("amazonPrimeVideoLogo.svg");
+    background-repeat: no-repeat;
+}
+
+/*characters with background*/
+#characters
+{
+    position: absolute;
+    overflow: hidden;
+    width: 320px;
+    height: 250px;
+
+    right: 0;
+    top: 0;
+
+    background-image: url("fullBG_big.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* contains PATRIOT logo SVG and Text */
+#logo
+{
+    position: absolute;
+    overflow: hidden;
+
+    left: 428px;
+    top: 11px;
+
+    width: 257px;
+    height: 70px;
+    opacity: 1;
+}
+
+#logoSVG
+{
+    position: absolute;
+    overflow: hidden;
+
+    width: 258px;
+    height: 43px;
+
+    left: 0;
+    top: 16px;
+
+    fill: #af1709;
+}
+
+#logoTxt
+{
+    position: absolute;
+    overflow: hidden;
+
+    left: 0;
+    top: 0;
+
+    width: 107px;
+    height: 7px;
+    opacity: 0;
+
+    background-image: url("LogoText.svg");
+    background-repeat: no-repeat;
+}
+
+/* Expanded date CSS for pre and post elements */
+/* Date container */
+#dateExpanded
+{
+    pointer-events: none;
+
+    position: absolute;
+    overflow: hidden;
+
+    left: 419px;
+    top: 113px;
+
+    width: 150px;
+    height: 63px;
+
+    opacity: 1;
+}
+
+/* pre date container */
+#preDateExpanded
+{
+    position: absolute;
+    overflow: hidden;
+
+    width: 79px;
+    height: 63px;
+
+    left: 10px;
+}
+
+/* post date container */
+#postDateExpanded
+{
+    position: absolute;
+    overflow: hidden;
+
+    width: 148px;
+    height: 40px;
+
+    left: 0;
+    top: 4px;
+
+    -ms-transform: rotate(-2deg); /* IE 9 */
+    -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+    transform: rotate(-2deg);
+}
+
+/* =============================== COLLAPSED PANEL =============================== */
+#collapsed
+{
+    position: absolute;
+    overflow: hidden;
+
+    left: 0;
+    top: 0;
+
+    width: 728px;
+    height: 90px;
+    opacity: 1;
+
+    /*background-image: url("728x90_Red.jpg");*/
+    background-image: url("collapsedBG.png");
+    background-repeat: no-repeat;
+}
+
+#expandBtn
+{
+    cursor: pointer;
+    position: absolute;
+    display: block;
+
+    right: 14px;
+    bottom: 14px;
+
+    width: 66px;
+    height: 13px;
+    opacity: 1;
+
+    background-image: url("seeMoreBtn.png");
+    background-repeat: no-repeat;
+}
+
+#expandBtn:hover
+{
+    background-image: url("seeMoreBtn_over.png");
+}
+
+#tag
+{
+    position: relative;
+    overflow: hidden;
+
+    left: 34px;
+    top: 12px;
+
+    width: 402px;
+    height: 56px;
+    opacity: 1;
+}
+
+.tag
+{
+    position: absolute;
+    overflow: hidden;
+
+    left: 0;
+    top: 0;
+
+    width: inherit;
+    height: inherit;
+    opacity: 0;
+
+    background-image: url("tag.png");
+    background-repeat: no-repeat;
+}
+
+/*who*/
+#w
+{
+    clip: rect(0px, 56px, 56px, 0px);
+}
+
+#h
+{
+    clip: rect(0px, 78px, 56px, 56px);
+}
+
+#o
+{
+    clip: rect(0px, 98px, 56px, 78px);
+}
+
+/*is*/
+#i
+{
+    clip: rect(0px, 120px, 56px, 98px);
+}
+
+#s
+{
+    clip: rect(0px, 140px, 56px, 120px);
+}
+
+/*john*/
+#j
+{
+    clip: rect(0px, 160px, 56px, 140px);
+}
+
+#o2
+{
+    clip: rect(0px, 182px, 56px, 160px);
+}
+
+#h2
+{
+    clip: rect(0px, 206px, 56px, 180px);
+}
+
+#n
+{
+    clip: rect(0px, 230px, 56px, 206px);
+}
+
+/*lakemen*/
+#l
+{
+    clip: rect(0px, 250px, 56px, 230px);
+}
+
+#a
+{
+    clip: rect(0px, 280px, 56px, 250px);
+}
+
+#k
+{
+    clip: rect(0px, 306px, 56px, 280px);
+}
+
+#e
+{
+    clip: rect(0px, 326px, 56px, 306px);
+}
+
+#m
+{
+    clip: rect(0px, 354px, 56px, 326px);
+}
+
+#a2
+{
+    clip: rect(0px, 376px, 56px, 354px);
+}
+
+#n2
+{
+    clip: rect(0px, 410px, 56px, 376px);
+}
+
+
+#dateCollapsed
+{
+    pointer-events: none;
+
+    position: absolute;
+    overflow: hidden;
+
+    left: 476px;
+    top: 0;
+    width: 300px;
+    height: 90px;
+    opacity: 1;
+}
+
+#postDateCollapsed
+{
+    position: absolute;
+    overflow: hidden;
+
+    left: 0;
+    top: 10px;
+    width: 218px;
+    height: 70px;
+    opacity: 1;
+
+    -ms-transform: rotate(-2deg); /* IE 9 */
+    -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+    transform: rotate(-2deg);
+}
+
+#preDateCollapsed
+{
+    position: absolute;
+    overflow: hidden;
+
+    left: 0;
+    top: 0;
+
+    width: 107px;
+    height: 90px;
+
+    opacity: 1;
+
+    display: block;
+}
+
+#closeBtnHolder
+{
+    position: absolute;
+    cursor: pointer;
+
+    right: 4px;
+    top: 4px;
+
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+}
+
+#closeBtn
+{
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: inherit;
+    height: inherit;
+    opacity: 1;
+    fill: black;
+    background-color: transparent;
+}
+
+#closeBtn:hover
+{
+    fill: #af1709;
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+}
+
+#closeBtnSVG
+{
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: inherit;
+    height: inherit;
+}
+
+.SVG
+{
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: inherit;
+    height: inherit;
+}

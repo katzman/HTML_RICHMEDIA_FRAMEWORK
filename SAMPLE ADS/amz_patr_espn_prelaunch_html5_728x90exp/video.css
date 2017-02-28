@@ -1,0 +1,154 @@
+#videoPanel
+{
+    position: 			absolute;
+    overflow: 			hidden;
+    display: 			none;
+
+    width:             	410px;
+    height:            	250px;
+
+    left: 				-409px;
+    top: 				0;
+}
+
+
+#userVideo
+{
+    position:          	absolute;
+    opacity: 			1;
+    visibility: 		visible;
+
+    width:             	410px;
+    height:            	250px;
+
+    left: 				0;
+    top: 				0;
+}
+
+
+#userCloseBtn
+{
+    position:          	absolute;
+    opacity: 			1;
+    visibility: 		visible;
+
+    right:              9px;
+    bottom:             6px;
+}
+
+
+#videoHolder
+{
+    pointer-events: 	none;
+    position: 			absolute;
+    opacity:            0;
+
+    top: 				0;
+    left:               -17px;
+    width:             	444px;
+    height:            	250px;
+}
+
+
+#videoPosterFrame
+{
+    position: 			absolute;
+
+    top: 				0;
+    left:               0;
+
+    width:             	410px;
+    height:            	inherit;
+
+    opacity:            1;
+
+    background-image: url("videoBg.jpg");
+    background-repeat: no-repeat;
+}
+
+
+#videoTarget
+{
+    position: 			absolute;
+
+    width:             	inherit;
+    height:            	inherit;
+}
+
+
+#user_playPause
+{
+    position: 			absolute;
+    overflow:          	visible;
+    display: 			block;
+
+    left:               12px;
+    bottom:             6px;
+
+    width:             	16px;
+    height:            	16px;
+
+    fill:               white;
+}
+
+#user_playPause:hover
+{
+    fill: #af1709;
+}
+
+#user_audio
+{
+    position: 			absolute;
+    overflow:          	hidden;
+    display: 			block;
+
+    left:               40px;
+    bottom:             4px;
+
+    width:             	18px;
+    height:            	18px;
+
+    fill:               white;
+}
+
+#user_audio:hover
+{
+    fill:               #af1709;
+}
+
+#audioBtnSVG
+{
+    width: 18px;
+}
+
+#user_progress
+{
+    position: 			absolute;
+    overflow:          	visible;
+    display: 			block;
+
+    width:              320px;
+
+    left: 				70px;
+    bottom: 			12px;
+}
+
+#user_progressBG
+{
+    position: 			absolute;
+    overflow:          	visible;
+    display: 			block;
+
+    width:              inherit;
+    height:             3px;
+
+    left: 				0;
+    bottom: 			0;
+}
+
+.controlsSVG
+{
+    position:          	absolute;
+    width:             	inherit;
+    height:            	inherit;
+}

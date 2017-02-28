@@ -108,16 +108,6 @@ Array.prototype.sortByObjectProp = function( prop, reverse )
 };
 
 
-Function.prototype.inherits = function( parent )
-{
-    this.prototype = Object.create( parent.prototype );
-    this.prototype.constructor = parent;
-    this.prototype.super = parent.prototype;
-    this.prototype.instance = this.prototype;
-    //parent.child = this.prototype;
-};
-
-
 function isInViewport( _element )
 {
     var rect;
@@ -198,12 +188,4 @@ Function.prototype.inherits = function( parent )
     this.prototype.constructor = parent;
     this.prototype.super = parent.prototype;
     this.prototype.instance = this.prototype;
-};
-
-
-Function.prototype.inheritsStatic = function( parent )
-{
-    this.prototype = Object.create( parent );
-    this.prototype.constructor = parent;
-    this.prototype.super = parent;
 };

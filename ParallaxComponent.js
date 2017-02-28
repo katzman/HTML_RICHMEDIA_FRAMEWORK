@@ -7,10 +7,12 @@ function ParallaxComponent()
 	var elementList = [];
 	var isEnabled = false;
 
+
     this.destroy = function()
     {
-
+        elementList = null;
     };
+
 
     this.addElement = function( _id, _xChange, _yChange, _speed )
     {

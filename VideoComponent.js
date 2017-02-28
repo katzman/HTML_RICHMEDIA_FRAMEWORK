@@ -369,17 +369,31 @@ function VideoComponent( _video )
     function videoError( e )
     {
         console.log( "video error" );
+        console.log( video.networkState );
         console.log( e );
-    }
 
+        switch( e.target.error.code )
+        {
+            case e.target.error.MEDIA_ERR_ABORTED:
+                console.log('You aborted the video playback.');
+                break;
 
-    /**
-     * anything that needs to be updated on video tick goes here.
-     */
-    function timerUpdated( e )
-    {
-        updateVideoProps();
-        sendVideoEvent( Constants.VIDEO_UPDATED );
+            case e.target.error.MEDIA_ERR_NETWORK:
+                console.log('A network error caused the video download to fail part-way.');
+                break;
+
+            case e.target.error.MEDIA_ERR_DECODE:
+                console.log('The video playback was aborted due to a corruption problem or because the video used features your browser did not support.');
+                break;
+
+            case e.target.error.MEDIA_ERR_SRC_NOT_SUPPORTED:
+                console.log('The video could not be loaded, either because the server or network failed or because the format is not supported.');
+                break;
+
+            default:
+                console.log('An unknown error occurred.');
+                break;
+        }
     }
 
 
@@ -457,7 +471,7 @@ function VideoComponent( _video )
      */
     function isFired( _event )
     {
-        if( !firedProgressEvents ) return -1;
+        if( !firedProgressEvents ) return false;
         return ( firedProgressEvents.indexOf( _event ) > -1 );
     }
 
@@ -578,7 +592,7 @@ function VideoComponent( _video )
         video.addEventListener( 'play', videoPlaying, false );
         video.addEventListener( 'pause', videoPaused, false );
         video.addEventListener( 'canplay', videoCanplay, false );
-        video.addEventListener( 'timeupdate', timerUpdated, false );
+        video.addEventListener( 'timeupdate', updateVideoProps, false );
         video.addEventListener( 'waiting', showBuffer, false );
         video.addEventListener( 'progress', updateLoad, false );
     }
@@ -593,34 +607,33 @@ function VideoComponent( _video )
         video.removeEventListener( 'play', videoPlaying, false );
         video.removeEventListener( 'pause', videoPaused, false );
         video.removeEventListener( 'canplay', videoCanplay, false );
-        video.removeEventListener( 'timeupdate', timerUpdated, false );
+        video.removeEventListener( 'timeupdate', updateVideoProps, false );
         video.removeEventListener( 'waiting', showBuffer, false );
         video.removeEventListener( 'progress', updateLoad, false );
     }
 
+    /**
+     * Video variable object.
+     */
+    function VideoVO()
+    {
+        this.mmID = '';
+        this.pathMP4 = '';
+        this.pathWEBM = '';
+        this.pathOGG = '';
+        this.videoReportingID = '';
+    }
+
+
+    /**
+     * Video event variable object.
+     */
+    function VideoEventVO()
+    {
+        this.event = '';
+        this.scope = '';
+        this.callback = '';
+    }
+
     this.init();
-}
-
-
-/**
- * Video variable object.
- */
-function VideoVO()
-{
-    this.mmID = '';
-    this.pathMP4 = '';
-    this.pathWEBM = '';
-    this.pathOGG = '';
-    this.videoReportingID = '';
-}
-
-
-/**
- * Video event variable object.
- */
-function VideoEventVO()
-{
-    this.event = '';
-    this.scope = '';
-    this.callback = '';
 }

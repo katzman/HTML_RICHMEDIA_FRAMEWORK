@@ -127,7 +127,7 @@ function MouseEventManager( _target )
         var btnId = btn.id;
         var event = e.type;
 
-        if( !btnList || btnId == "" || !btnId || !event ) return;
+        if( !btnList || !btnId || btnId == "" || !event ) return;
 
         if( btnList[btnId] && btnList[btnId][event] )
         {

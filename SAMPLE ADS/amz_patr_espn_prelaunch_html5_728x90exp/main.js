@@ -107,7 +107,7 @@ Banner.initAnimation = function()
     {
         TweenLite.delayedCall( 0.4, function()
         {
-            Banner.resetAndPlay( "collapsed" );
+            Banner.collapsedDate.resetAndPlay();
         });
     }
 };
@@ -143,7 +143,7 @@ Banner.showExpandAnimation = function()
     function showDate()
     {
         if( !Banner.isExpanded ) return;
-        Banner.resetAndPlay( "expanded" );
+        Banner.expandedDate.resetAndPlay();
     }
 };
 
@@ -154,23 +154,6 @@ Banner.startVideo = function()
     // Banner.userExpand tells the expand component if the user selected to expand or not. If true it will play the video with sound.
     console.log( "STARTING VIDEO" );
     Banner.expandPanelComp.playInitVideo( Banner.userExpand );
-};
-
-
-Banner.resetAndPlay = function( _type )
-{
-    console.log( ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> BANNER: RESET AND PLAY CALLED: " + _type + "   " + Banner.isPastDate );
-
-    switch( _type )
-    {
-        case 'expanded':
-            Banner.expandedDate.resetAndPlay();
-            break;
-
-        case 'collapsed':
-            Banner.collapsedDate.resetAndPlay();
-            break;
-    }
 };
 
 
@@ -185,13 +168,7 @@ Banner.resetElements = function()
 
     Banner.logoAnimation.reset();
     Banner.expandPanelComp.hidePanel();
-    Banner.resetDates();
-};
-
-
-Banner.resetDates = function()
-{
-    Banner.expandedDate.reset();
+    Banner.expandedDate.reset();    
 };
 
 
